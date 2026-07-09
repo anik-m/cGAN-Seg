@@ -60,7 +60,7 @@ class BasicDataset(Dataset):
         else:#3D
             img = cv2.imread(img_file).astype('float32')
 
-        img=(255 * ((img - img.min()) / (img.ptp()+1e-6))).astype(np.uint8)
+        img=(255 * ((img - img.min()) / (np.ptp(img)+1e-6))).astype(np.uint8)
 
         tensor_img,tensor_mask = self.preprocess(img, mask,self.transforms)
 
