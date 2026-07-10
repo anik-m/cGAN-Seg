@@ -54,7 +54,7 @@ def batch_process_masks(input_dir, output_dir):
         mask_img = create_mask_from_voc(xml_file)
         
         if mask_img is not None:
-            output_file_name = xml_file.stem + "_mask.png"
+            output_file_name = xml_file.stem + ".png"
             mask_img.save(output_path / output_file_name)
             count += 1
 
